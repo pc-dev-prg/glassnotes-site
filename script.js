@@ -66,4 +66,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Update version info dynamically
+    async function updateVersionInfo() {
+        try {
+            const response = await fetch('/api/version');
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+            
+            const mainBtn = document.getElementById('main-download-btn');
+            const navBtn = document.getElementById('nav-download-btn');
+            const heroBtn = document.getElementById('hero-download-btn');
+            const versionInfo = document.getElementById('version-info');
+
+            if (data.downloadUrl) {
+                if (mainBtn) mainBtn.href = data.downloadUrl;
+                if (navBtn) navBtn.href = data.downloadUrl;
+                if (heroBtn) heroBtn.href = data.downloadUrl;
+            }
+
+            if (data.version && data.requirements && versionInfo) {
+                versionInfo.textContent = `Version ${data.version} • Requires ${data.requirements}`;
+            }
+        } catch (error) {
+            console.error('Error fetching version info:', error);
+        }
+    }
+
+    updateVersionInfo();
 });

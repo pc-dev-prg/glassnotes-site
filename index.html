@@ -1,187 +1,259 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GlassNotes | Minimalist Glass Markdown Editor for macOS</title>
-        <meta name="description"
-          content="GlassNotes is a stunning, glassmorphic Markdown editor for macOS that lives in your sidebar. Focus on your ideas with a premium writing experience." />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <link rel="icon" type="image/png" href="assets/hero.png" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlassNotes | Minimalist Glass Markdown Editor for macOS</title>
+    <meta
+      name="description"
+      content="GlassNotes is a stunning, glassmorphic Markdown editor for macOS that lives in your sidebar. Focus on your ideas with a premium writing experience."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="assets/hero.png" />
+  </head>
 
-    <body>
-        <div class="background-blob blob-1"></div>
-        <div class="background-blob blob-2"></div>
-        <div class="background-blob blob-3"></div>
+  <body>
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
+    <div class="background-blob blob-3"></div>
 
-        <header>
-            <nav class="glass-nav">
-              <div class="logo">
-                <span class="logo-icon">💠</span>
-                <span class="logo-text">GlassNotes</span>
-              </div>
-              <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How it Works</a></li>
-                <li>
-                  <a href="#download" class="cta-button mini">
-                            <svg class="btn-icon" viewBox="0 0 384 512" width="14" height="14" fill="currentColor"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                    d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.1-77.5-19.1-36.9 0-77.4 23-95.8 56.5-38.3 69-9.8 171.9 27.6 225.4 18.2 26.2 39.4 55.4 67.4 54.4 27-1.1 37.1-17.7 69.4-17.7 32.1 0 41.5 17.7 69.8 17.2 28.3-.5 47-26.2 65.2-52.6 21-30.5 29.8-60 30-61.9-.8-.4-68.9-26.4-69.1-104.1zM249.1 82c21.2-25.8 18.6-54.8 17.2-66.2-19.1 1.2-43.5 13.9-57.2 29.9-14.7 17.2-26.5 45.3-22.1 63.9 21.6 1.7 44.8-9.4 62.1-27.6z"
-                                />
-                            </svg>
-                            Download
-                        </a>
-                        </li>
-                        </ul>
-                        </nav>
-                        </header>
+    <header>
+      <nav class="glass-nav">
+        <div class="logo">
+          <span class="logo-icon">💠</span>
+          <span class="logo-text">GlassNotes</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li>
+            <a href="#download" class="cta-button mini" id="nav-download-btn">
+              <svg
+                class="btn-icon"
+                viewBox="0 0 384 512"
+                width="14"
+                height="14"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.1-77.5-19.1-36.9 0-77.4 23-95.8 56.5-38.3 69-9.8 171.9 27.6 225.4 18.2 26.2 39.4 55.4 67.4 54.4 27-1.1 37.1-17.7 69.4-17.7 32.1 0 41.5 17.7 69.8 17.2 28.3-.5 47-26.2 65.2-52.6 21-30.5 29.8-60 30-61.9-.8-.4-68.9-26.4-69.1-104.1zM249.1 82c21.2-25.8 18.6-54.8 17.2-66.2-19.1 1.2-43.5 13.9-57.2 29.9-14.7 17.2-26.5 45.3-22.1 63.9 21.6 1.7 44.8-9.4 62.1-27.6z"
+                />
+              </svg>
+              Download
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        <main>
-            <section class="hero">
-              <div class="hero-content">
-                <h1 class="reveal">
-                        The Crystal Clear <br /><span class="gradient-text">Writing Experience</span>
-                        </h1>
-                        <p class="reveal delay-1">
-                        Experience the ultimate minimalist Markdown editor
-                        designed exclusively for macOS. Stunning glass aesthetic
-                        meets focused functionality.
-                    </p>
-                    <div class="hero-actions reveal delay-2">
-                        <a href="#download" class="cta-button primary">Get GlassNotes</a>
-                        <a href="#features" class="cta-button secondary">Explore Features</a>
-                        </div>
-                        </div>
-                        <div class="hero-visual reveal delay-3">
-                          <div class="glass-frame">
-                        <img src="assets/hero.png" alt="GlassNotes Interface" class="hero-image" />
-                        </div>
-                        </div>
-                        </section>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="reveal">
+            The Crystal Clear <br /><span class="gradient-text"
+              >Writing Experience</span
+            >
+          </h1>
+          <p class="reveal delay-1">
+            Experience the ultimate minimalist Markdown editor designed
+            exclusively for macOS. Stunning glass aesthetic meets focused
+            functionality.
+          </p>
+          <div class="hero-actions reveal delay-2">
+            <a
+              href="#download"
+              class="cta-button primary"
+              id="hero-download-btn"
+              >Get GlassNotes</a
+            >
+            <a href="#features" class="cta-button secondary"
+              >Explore Features</a
+            >
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-3">
+          <div class="glass-frame">
+            <img
+              src="assets/hero.png"
+              alt="GlassNotes Interface"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </section>
 
-            <section id="features" class="features">
-                <h2 class="section-title reveal">Designed for Focus</h2>
-                <div class="features-glass-panel glass reveal">
-                  <div class="feature-segment">
-                    <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-5.25v9" />
-                            </svg>
-                        </div>
-                        <h3>Glass Aesthetic</h3>
-                        <p>
-                            Beautiful transparency effects with macOS vibrancy
-                            that feel right at home on your desktop.
-                        </p>
-                        </div>
-                        <div class="feature-segment">
-                          <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                            </svg>
-                        </div>
-                        <h3>Markdown First</h3>
-                        <p>
-                            Clean and powerful Markdown syntax support for
-                            distraction-free writing.
-                        </p>
-                        </div>
-                        <div class="feature-segment">
-                          <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-                            </svg>
-                        </div>
-                        <h3>Sidebar Companion</h3>
-                        <p>
-                            Pins to the edge of your screen as a persistent
-                            sidebar for instant access.
-                        </p>
-                        </div>
-                        <div class="feature-segment">
-                          <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h3>Data Freedom</h3>
-                        <p>
-                            Your notes stay local. Export or import your entire
-                            library anytime. You own your data.
-                        </p>
-                        </div>
-                        </div>
-                        </section>
+      <section id="features" class="features">
+        <h2 class="section-title reveal">Designed for Focus</h2>
+        <div class="features-glass-panel glass reveal">
+          <div class="feature-segment">
+            <div class="feature-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-5.25v9"
+                />
+              </svg>
+            </div>
+            <h3>Glass Aesthetic</h3>
+            <p>
+              Beautiful transparency effects with macOS vibrancy that feel right
+              at home on your desktop.
+            </p>
+          </div>
+          <div class="feature-segment">
+            <div class="feature-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                />
+              </svg>
+            </div>
+            <h3>Markdown First</h3>
+            <p>
+              Clean and powerful Markdown syntax support for distraction-free
+              writing.
+            </p>
+          </div>
+          <div class="feature-segment">
+            <div class="feature-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+                />
+              </svg>
+            </div>
+            <h3>Sidebar Companion</h3>
+            <p>
+              Pins to the edge of your screen as a persistent sidebar for
+              instant access.
+            </p>
+          </div>
+          <div class="feature-segment">
+            <div class="feature-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3>Data Freedom</h3>
+            <p>
+              Your notes stay local. Export or import your entire library
+              anytime. You own your data.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <section id="how-it-works" class="how-it-works">
-                <div class="split-section">
-                  <div class="visual reveal-left">
-                    <div class="glass-frame">
-                            <img src="assets/integration.png" alt="Sidebar Integration" class="hero-image" />
-                            </div>
-                            </div>
-                            <div class="content reveal delay-1">
-                              <h2 class="section-title">Seamlessly Integrated</h2>
-                              <p>
-                            GlassNotes is designed to be your desktop's best
-                            friend. It slides in from the edge, keeping your
-                            workspace clean while ensuring your notes are always
-                            a glance away.
-                        </p>
-                        <ul class="feature-list">
-                          <li>Always on Top mode for research</li>
-                          <li>Global hotkeys for quick capture</li>
-                          <li>Support for 10+ languages</li>
-                          <li>Native macOS performance</li>
-                        </ul>
-                        </div>
-                        </div>
-                        </section>
+      <section id="how-it-works" class="how-it-works">
+        <div class="split-section">
+          <div class="visual reveal-left">
+            <div class="glass-frame">
+              <img
+                src="assets/integration.png"
+                alt="Sidebar Integration"
+                class="hero-image"
+              />
+            </div>
+          </div>
+          <div class="content reveal delay-1">
+            <h2 class="section-title">Seamlessly Integrated</h2>
+            <p>
+              GlassNotes is designed to be your desktop's best friend. It slides
+              in from the edge, keeping your workspace clean while ensuring your
+              notes are always a glance away.
+            </p>
+            <ul class="feature-list">
+              <li>Always on Top mode for research</li>
+              <li>Global hotkeys for quick capture</li>
+              <li>Support for 10+ languages</li>
+              <li>Native macOS performance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-            <section id="download" class="download-section reveal">
-                <div class="download-glass glass">
-                  <h2>Elevate Your Productivity</h2>
-                  <p>
-                        Beautiful, focused, and crystal clear. Start your new
-                        writing experience today.
-                    </p>
-                    <a href="https://github.com/pc-dev-prg/glassnotes-site/releases/download/1.2.0/GlassNotes.dmg"
-                      class="cta-button primary large">
-                      <svg class="btn-icon" viewBox="0 0 384 512" width="20" height="20" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.1-77.5-19.1-36.9 0-77.4 23-95.8 56.5-38.3 69-9.8 171.9 27.6 225.4 18.2 26.2 39.4 55.4 67.4 54.4 27-1.1 37.1-17.7 69.4-17.7 32.1 0 41.5 17.7 69.8 17.2 28.3-.5 47-26.2 65.2-52.6 21-30.5 29.8-60 30-61.9-.8-.4-68.9-26.4-69.1-104.1zM249.1 82c21.2-25.8 18.6-54.8 17.2-66.2-19.1 1.2-43.5 13.9-57.2 29.9-14.7 17.2-26.5 45.3-22.1 63.9 21.6 1.7 44.8-9.4 62.1-27.6z"
-                            />
-                        </svg>
-                        Download for macOS
-                    </a>
-                    <p class="meta">Version 1.2.0 • Requires macOS 14.0+</p>
-                </div>
-                </section>
-                </main>
+      <section id="download" class="download-section reveal">
+        <div class="download-glass glass">
+          <h2>Elevate Your Productivity</h2>
+          <p>
+            Beautiful, focused, and crystal clear. Start your new writing
+            experience today.
+          </p>
+          <a
+            href="https://github.com/pc-dev-prg/glassnotes-site/releases/download/1.2.0/GlassNotes.dmg"
+            class="cta-button primary large"
+            id="main-download-btn"
+          >
+            <svg
+              class="btn-icon"
+              viewBox="0 0 384 512"
+              width="20"
+              height="20"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.1-77.5-19.1-36.9 0-77.4 23-95.8 56.5-38.3 69-9.8 171.9 27.6 225.4 18.2 26.2 39.4 55.4 67.4 54.4 27-1.1 37.1-17.7 69.4-17.7 32.1 0 41.5 17.7 69.8 17.2 28.3-.5 47-26.2 65.2-52.6 21-30.5 29.8-60 30-61.9-.8-.4-68.9-26.4-69.1-104.1zM249.1 82c21.2-25.8 18.6-54.8 17.2-66.2-19.1 1.2-43.5 13.9-57.2 29.9-14.7 17.2-26.5 45.3-22.1 63.9 21.6 1.7 44.8-9.4 62.1-27.6z"
+              />
+            </svg>
+            Download for macOS
+          </a>
+          <p class="meta" id="version-info">
+            Version 1.2.0 • Requires macOS 14.0+
+          </p>
+        </div>
+      </section>
+    </main>
 
-        <footer>
-            <div class="footer-content">
-              <div class="footer-logo">
-                <span class="logo-icon">💠</span>
-                <span>GlassNotes</span>
-              </div>
-              <p class="copyright">
-                    &copy; 2026 Petr Cafourek. All rights reserved.
-                    </p>
-                    </div>
-        </footer>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">💠</span>
+          <span>GlassNotes</span>
+        </div>
+        <p class="copyright">&copy; 2026 Petr Cafourek. All rights reserved.</p>
+      </div>
+    </footer>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+  </body>
 </html>
