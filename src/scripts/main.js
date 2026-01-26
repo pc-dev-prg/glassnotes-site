@@ -41,4 +41,21 @@ document.addEventListener('astro:page-load', () => {
     reveals.forEach(reveal => {
         observer.observe(reveal);
     });
+
+    // Bento Grid & Pricing Cards interactive glow effect
+    const interactiveItems = document.querySelectorAll('.bento-item, .pricing-card');
+    
+    const handleMouseMove = (e) => {
+        const item = e.currentTarget;
+        const rect = item.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        item.style.setProperty('--mouse-x', `${x}%`);
+        item.style.setProperty('--mouse-y', `${y}%`);
+    };
+
+    interactiveItems.forEach(item => {
+        item.addEventListener('mousemove', handleMouseMove);
+    });
 });

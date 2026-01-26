@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import versionData from '../../version.json';
 ---
 
 <Layout title="GlassNotes | Minimalist Glass Markdown Editor for macOS">
@@ -19,8 +20,8 @@ import Footer from '../components/Footer.astro';
           Experience the perfect blend of native macOS performance and minimalist aesthetics. A premium Markdown editor designed to keep you in the flow.
         </p>
         <div class="hero-actions reveal delay-2">
-          <a href="#download" class="cta-button primary" id="hero-download-btn">
-            Download for macOS (v1.6.8)
+          <a href={versionData.downloadUrl} class="cta-button primary" id="hero-download-btn">
+            Download for macOS (v{versionData.version})
           </a>
           <a href="/pricing" class="cta-button secondary">Launch Web App</a>
         </div>
@@ -29,15 +30,15 @@ import Footer from '../components/Footer.astro';
         <div class="app-mockup">
           <div class="sidebar">
             <div class="sidebar-title">
-              GlassNotes <span class="logo-badge">PRO</span> 🔔 ⚙️
+              GlassNotes <span class="logo-badge">PRO</span> 
             </div>
-            <div class="search-box">🔍 Hledat poznámky...</div>
-            <div class="sidebar-item active">⚡ Rychlé poznámky</div>
-            <div class="sidebar-item">📅 24 hodin</div>
+            <div class="search-box">🔍 Search Notes</div>
+            <div class="sidebar-item active">⚡ Fast Notes</div>
+            <div class="sidebar-item">📅 24 hours</div>
             <div style="font-size: 0.7rem; color: #444; margin-top: 10px">FOLDERS</div>
-            <div class="sidebar-item">📁 MacOS</div>
-            <div class="sidebar-item">📁 Osobní projekty</div>
-            <div class="sidebar-item">📁 Testy</div>
+            <div class="sidebar-item">📁 Welcome</div>
+            <div class="sidebar-item">📁 Personal</div>
+            <div class="sidebar-item">📁 Projects</div>
             <div style="margin-top: auto; display: flex; gap: 15px; color: #666">
               <span>⬅️</span> <span>⚙️</span> <span>ℹ️</span>
             </div>
@@ -45,10 +46,9 @@ import Footer from '../components/Footer.astro';
           <div class="editor-preview">
             <div class="editor-header">
               <span>GLASSNOTES</span>
-              <span style="margin-left: auto">📤 📌 🔒</span>
             </div>
             <div class="editor-content">
-              <h2># Nové funkce</h2>
+              <h2># Welcome to GlassNotes</h2>
               <p style="color: var(--primary); font-size: 0.75rem; margin-bottom: 20px;">
                 Chyby | Hotový vývoj | Plán monetizace
               </p>
@@ -62,22 +62,7 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
           </div>
-          <div class="mockup-overlay">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-              <span style="font-weight: 700; font-size: 0.8rem">Nastavení</span>
-              <span style="color: #444">✕</span>
-            </div>
-            <div class="overlay-item">
-              <span>🏆 Úroveň předplatného</span>
-              <span style="background: #222; padding: 2px 6px; border-radius: 4px; font-size: 0.6rem;">
-                FREE <span style="color: var(--primary)">PRO</span>
-              </span>
-            </div>
-            <div class="overlay-item">
-              <span>🔌 Spouštění po startu</span>
-              <div class="overlay-switch"></div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -93,38 +78,38 @@ import Footer from '../components/Footer.astro';
 
     <section id="features" class="features">
       <h2 class="section-title reveal">Designed for Focus</h2>
-      <div class="features-glass-panel glass reveal">
-        <div class="feature-segment">
-          <h3>Knowledge Mapping</h3>
-          <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Connect your mind.</p>
+      <div class="bento-grid">
+        <div class="bento-item glass large reveal">
+          <span class="feature-badge">Knowledge Mapping</span>
+          <h3>Connect your mind.</h3>
           <p>Use Wiki-links to build your Second Brain. Link notes effortlessly using [[Title]] and navigate your personal knowledge web with zero friction.</p>
         </div>
-        <div class="feature-segment">
-          <h3>Time Travel</h3>
-          <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Peace of mind, versioned.</p>
-          <p>Never fear the delete key again. GlassNotes automatically tracks your changes, allowing you to browse and restore any version of your note from the past.</p>
+        <div class="bento-item glass medium reveal delay-1">
+          <span class="feature-badge">Time Travel</span>
+          <h3>Peace of mind, versioned.</h3>
+          <p>Never fear the delete key again. GlassNotes automatically tracks your changes, allowing you to browse and restore any version of your note.</p>
         </div>
-        <div class="feature-segment">
-          <h3>Visual Atmosphere</h3>
-          <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Writing as an art.</p>
-          <p>From the deep, focused blues of Midnight to the warm, vibrant hues of Sunset. Personalize your writing environment with premium themes that match your creative mood.</p>
+        <div class="bento-item glass medium reveal delay-2">
+          <span class="feature-badge">Visual Atmosphere</span>
+          <h3>Writing as an art.</h3>
+          <p>From the deep blues of Midnight to the warm hues of Sunset. Personalize your environment with premium themes.</p>
         </div>
-        <div class="feature-segment">
-          <h3>Smart Organization</h3>
-          <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Folders that think.</p>
-          <p>Stay organized without the effort. Dynamic Smart Folders automatically group your notes by tags, status, or date ranges.</p>
+        <div class="bento-item glass large reveal delay-3">
+          <span class="feature-badge">Smart Organization</span>
+          <h3>Folders that think.</h3>
+          <p>Stay organized without the effort. Dynamic Smart Folders automatically group your notes by tags, status, or date ranges. Experience the future of file management in a native macOS shell.</p>
         </div>
       </div>
     </section>
 
-    <section class="final-cta reveal">
-      <div class="glass" style="max-width: 1000px; margin: 100px auto; padding: 80px 40px; text-align: center;">
-        <h2 style="font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 24px;">Designed for the modern thinker.</h2>
-        <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <section class="final-cta">
+      <div class="glass reveal" style="max-width: 1000px; margin: 100px auto; padding: 80px 40px; text-align: center;">
+        <h2 class="reveal delay-1" style="font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 24px;">Designed for the modern thinker.</h2>
+        <p class="reveal delay-2" style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">
           Available now on macOS and coming soon to all your devices via the web.
         </p>
-        <div class="hero-actions" style="justify-content: center;">
-          <a href="#download" class="cta-button primary">Download Now</a>
+        <div class="hero-actions reveal delay-3" style="justify-content: center;">
+          <a href={versionData.downloadUrl} class="cta-button primary">Download Now</a>
           <a href="/pricing" class="cta-button secondary">Explore Pro Features</a>
         </div>
       </div>
