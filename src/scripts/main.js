@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+// This event fires on the first load AND on every navigation when using ClientRouter
+document.addEventListener('astro:page-load', () => {
     const nav = document.querySelector('.glass-nav');
     
     // Function to handle scroll and toggle navbar background
@@ -7,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Navbar scroll effect
         if (scrollY > 20) {
-            nav.classList.add('scrolled');
+            nav?.classList.add('scrolled');
         } else {
-            nav.classList.remove('scrolled');
+            nav?.classList.remove('scrolled');
         }
 
         // Parallax updates - using CSS variables for performance
