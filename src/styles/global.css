@@ -98,15 +98,21 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 50vw;
-  height: 50vh;
-  background: radial-gradient(
-    circle at 100% 0%, 
-    rgba(92, 124, 255, 0.15) 0%, 
-    transparent 80%
-  );
+  width: 60vw;
+  height: 60vh;
+  background: 
+    radial-gradient(
+      circle at 100% 0%, 
+      rgba(255, 255, 255, 0.15) 0%, 
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 0%, 
+      rgba(92, 124, 255, 0.3) 0%, 
+      transparent 80%
+    );
   pointer-events: none;
-  z-index: 10;
+  z-index: 1000;
 }
 
 @keyframes meshFloat {
@@ -290,6 +296,10 @@ header {
   align-items: center;
 }
 
+.hero-content {
+  text-align: left;
+}
+
 .hero-content h1 {
   font-size: 6rem;
   line-height: 0.95;
@@ -310,6 +320,7 @@ header {
 .hero-actions {
   display: flex;
   gap: 20px;
+  justify-content: flex-start;
 }
 
 .hero-visual {
