@@ -287,12 +287,12 @@ header {
 
 /* Hero Section */
 .hero {
-  padding: 180px 40px 100px;
+  padding: 160px 40px 80px;
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 60px;
+  grid-template-columns: 0.85fr 1.15fr; /* Slightly more space for visual */
+  gap: 40px;
   align-items: center;
 }
 
@@ -301,12 +301,12 @@ header {
 }
 
 .hero-content h1 {
-  font-size: 6rem;
-  line-height: 0.95;
-  margin-bottom: 30px;
+  font-size: 6.5rem;
+  line-height: 0.9;
+  margin-bottom: 24px;
   font-weight: 800;
-  letter-spacing: -4px;
-  color: var(--text-main);
+  letter-spacing: -5px;
+  color: #fff; /* Pure white */
 }
 
 .hero-content p {
@@ -337,21 +337,22 @@ header {
 /* Mockup CSS with 3D Depth */
 .app-mockup {
   width: 100%;
-  max-width: 720px;
+  max-width: 760px; /* Larger mockup */
   aspect-ratio: 16/11;
-  background: rgba(15, 17, 26, 0.82);
+  background: rgba(15, 17, 26, 0.85);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: grid;
   grid-template-columns: 180px 1fr;
   overflow: hidden;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateY(-18deg) rotateX(10deg) rotateZ(-2deg);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease;
+  transform: rotateY(-22deg) rotateX(12deg) rotateZ(-3deg);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease;
   box-shadow: 
-    -20px 40px 80px rgba(0, 0, 0, 0.6),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    -30px 50px 100px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(92, 124, 255, 0.1), /* Subtle outer glow */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .app-mockup:hover {
@@ -1135,4 +1136,31 @@ header {
     transform: scale(1.02);
     filter: blur(10px);
   }
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
 }

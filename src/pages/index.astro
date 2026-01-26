@@ -60,13 +60,24 @@ import versionData from "../../version.json";
               <span>GLASSNOTES</span>
             </div>
             <div class="editor-content">
-              <h2 style="font-size: 1.5rem;"># Welcome to GlassNotes</h2>
+              <h2
+                style="font-size: 1.5rem;"
+                class="typewriter-target"
+                data-text="# Welcome to GlassNotes"
+              >
+              </h2>
               <p
                 style="color: var(--primary); font-size: 0.75rem; margin-bottom: 20px;"
+                class="typewriter-target"
+                data-delay="1500"
+                data-text="Chyby | Hotový vývoj | Plán monetizace"
               >
-                Chyby | Hotový vývoj | Plán monetizace
               </p>
-              <div style="display: flex; flex-direction: column; gap: 8px">
+              <div
+                style="display: flex; flex-direction: column; gap: 8px"
+                class="typewriter-target"
+                data-delay="3000"
+              >
                 <div class="sidebar-item">
                   [x] Nastavit, aby se verze aplikace...
                 </div>
@@ -177,3 +188,59 @@ import versionData from "../../version.json";
 
   <Footer transition:persist />
 </Layout>
+
+<style>
+  .typewriter-target {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .typewriter-target.typing-started {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  function setupTypewriter() {
+    const targets = document.querySelectorAll(".typewriter-target");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startTypewriterSequence();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    const hero = document.querySelector(".hero");
+    if (hero) observer.observe(hero);
+
+    async function startTypewriterSequence() {
+      for (const target of targets) {
+        const delay = parseInt(target.getAttribute("data-delay") || "0");
+        const text = target.getAttribute("data-text");
+
+        await new Promise((r) => setTimeout(r, delay));
+        target.classList.add("typing-started");
+
+        if (text) {
+          for (let i = 0; i <= text.length; i++) {
+            target.textContent = text.slice(0, i);
+            await new Promise((r) => setTimeout(r, 30 + Math.random() * 40));
+          }
+        } else {
+          // If no data-text, just fade it in (for the list items container)
+          (target as HTMLElement).style.opacity = "1";
+          target.classList.add("reveal-active");
+        }
+      }
+    }
+  }
+
+  // Run on initial load and after transitions
+  setupTypewriter();
+  document.addEventListener("astro:after-swap", setupTypewriter);
+</script>
