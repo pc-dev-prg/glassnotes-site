@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/svelte": "^7.0.4",
     "astro": "^5.1.9",
     "svelte": "^5.19.0"
