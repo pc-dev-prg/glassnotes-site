@@ -1,7 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer for reveal animations
+    const nav = document.querySelector('.glass-nav');
+    
+    // Function to handle scroll and toggle navbar background
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
+        
+        // Navbar scroll effect
+        if (scrollY > 20) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+
+        // Parallax updates - using CSS variables for performance
+        document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`);
+    };
+
+    // Initial check on load
+    handleScroll();
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+
+    // Reveal animations
+    const reveals = document.querySelectorAll('.reveal');
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -12,85 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left');
-    revealElements.forEach(el => observer.observe(el));
-
-    // Nav bar transparency on scroll
-    const nav = document.querySelector('.glass-nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.style.background = 'rgba(10, 10, 12, 0.8)';
-            nav.style.backdropFilter = 'blur(20px)';
-        } else {
-            nav.style.background = 'rgba(255, 255, 255, 0.03)';
-            nav.style.backdropFilter = 'blur(15px)';
-        }
+    reveals.forEach(reveal => {
+        observer.observe(reveal);
     });
-
-    // Parallax effect for all glass frames
-    const glassFrames = document.querySelectorAll('.glass-frame');
-    window.addEventListener('mousemove', (e) => {
-        const x = (window.innerWidth / 2 - e.pageX) / 50;
-        const y = (window.innerHeight / 2 - e.pageY) / 50;
-        
-        glassFrames.forEach(frame => {
-            frame.style.transform = `rotateY(${-10 + x}deg) rotateX(${5 + y}deg)`;
-        });
-    });
-
-    // Magnetic Button Effect
-    const buttons = document.querySelectorAll('.cta-button.primary');
-    buttons.forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
-        });
-
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = '';
-        });
-    });
-
-    // Smooth scroll for anchors
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    // Update version info dynamically
-    async function updateVersionInfo() {
-        try {
-            const response = await fetch('/api/version');
-            if (!response.ok) throw new Error('Network response was not ok');
-            const data = await response.json();
-            
-            const mainBtn = document.getElementById('main-download-btn');
-            const navBtn = document.getElementById('nav-download-btn');
-            const heroBtn = document.getElementById('hero-download-btn');
-            const versionInfo = document.getElementById('version-info');
-
-            if (data.downloadUrl) {
-                if (mainBtn) mainBtn.href = data.downloadUrl;
-                if (navBtn) navBtn.href = data.downloadUrl;
-                if (heroBtn) heroBtn.href = data.downloadUrl;
-            }
-
-            if (data.version && data.requirements && versionInfo) {
-                versionInfo.textContent = `Version ${data.version} • Requires ${data.requirements}`;
-            }
-        } catch (error) {
-            console.error('Error fetching version info:', error);
-        }
-    }
-
-    updateVersionInfo();
 });

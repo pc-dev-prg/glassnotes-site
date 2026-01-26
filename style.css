@@ -61,6 +61,8 @@ body {
   border-radius: 50%;
   filter: blur(120px);
   animation: meshFloat 25s infinite alternate ease-in-out;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.3));
+  will-change: transform;
 }
 
 .glow-1 {
@@ -78,6 +80,7 @@ body {
   bottom: -200px;
   right: -100px;
   animation-delay: -5s;
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.2));
 }
 
 @keyframes meshFloat {
@@ -123,11 +126,20 @@ header {
   width: 100%;
   max-width: 1200px;
   padding: 10px 30px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  transition: var(--transition);
+}
+
+.glass-nav.scrolled {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--glass-border);
-  border-radius: 100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -278,6 +290,8 @@ header {
   position: relative;
   display: flex;
   justify-content: center;
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.1));
+  will-change: transform;
 }
 
 /* Mockup CSS */
@@ -293,6 +307,7 @@ header {
   grid-template-columns: 180px 1fr;
   overflow: hidden;
   position: relative;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.05));
 }
 
 .sidebar {
@@ -370,6 +385,7 @@ header {
   padding: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.15));
 }
 
 .overlay-item {
@@ -887,6 +903,7 @@ header {
 .copyright {
   color: var(--text-muted);
   font-size: 0.85rem;
+  margin-bottom: 40px;
 }
 
 /* Animations */
