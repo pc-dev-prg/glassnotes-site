@@ -1,12 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Waitlist from '../components/Waitlist.svelte';
-import versionData from '../../version.json';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Waitlist from "../components/Waitlist.svelte";
+import versionData from "../../version.json";
 ---
 
-<Layout title="Pricing | GlassNotes" description="Simple and transparent pricing for GlassNotes.">
+<Layout
+  title="Pricing | GlassNotes"
+  description="Simple and transparent pricing for GlassNotes."
+>
   <Navigation transition:persist />
 
   <main transition:animate="slide">
@@ -73,7 +76,9 @@ import versionData from '../../version.json';
               </div>
             </li>
           </ul>
-          <a href={versionData.downloadUrl} class="cta-button secondary">Download the App</a>
+          <a href={versionData.downloadUrl} class="cta-button secondary"
+            >Download the App</a
+          >
         </div>
 
         <!-- Pro Plan -->
@@ -188,36 +193,48 @@ import versionData from '../../version.json';
 
       <div class="ai-coming-soon reveal delay-5">
         <div class="pricing-card glass ai-tier">
-          <div class="ai-badge">FUTURE RELEASE</div>
+          <div class="ai-badge hidden">FUTURE RELEASE</div>
           <div class="ai-content-wrapper">
             <div class="plan-info">
               <h3>GlassNotes AI Plus</h3>
               <div class="price">Coming Soon</div>
-              <p>Supercharge your writing with integrated artificial intelligence.</p>
+              <p>
+                Supercharge your writing with integrated artificial
+                intelligence.
+              </p>
             </div>
             <ul class="plan-features ai-features-grid">
               <li>
                 <div class="feature-content">
                   <strong>Intelligent Summarization</strong>
-                  <span class="desc">Distill long documents into actionable insights instantly.</span>
+                  <span class="desc"
+                    >Distill long documents into actionable insights instantly.</span
+                  >
                 </div>
               </li>
               <li>
                 <div class="feature-content">
                   <strong>Smart Drafting</strong>
-                  <span class="desc">AI-powered suggestions to help you overcome writer's block.</span>
+                  <span class="desc"
+                    >AI-powered suggestions to help you overcome writer's block.</span
+                  >
                 </div>
               </li>
               <li>
                 <div class="feature-content">
                   <strong>Contextual Awareness</strong>
-                  <span class="desc">The AI understands your entire vault and links related ideas.</span>
+                  <span class="desc"
+                    >The AI understands your entire vault and links related
+                    ideas.</span
+                  >
                 </div>
               </li>
               <li>
                 <div class="feature-content">
                   <strong>Autonomous Tagging</strong>
-                  <span class="desc">Automatic organization based on the content of your notes.</span>
+                  <span class="desc"
+                    >Automatic organization based on the content of your notes.</span
+                  >
                 </div>
               </li>
             </ul>

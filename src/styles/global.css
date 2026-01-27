@@ -44,6 +44,10 @@ body {
     var(--bg-dark);
 }
 
+.hidden {
+  display: none;
+}
+
 /* Background Effects */
 .bg-mesh {
   position: fixed;
