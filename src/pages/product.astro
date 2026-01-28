@@ -311,9 +311,12 @@ import WaitlistModal from "../components/WaitlistModal.svelte";
             </p>
             <div class="waitlist-ui">
               <p>Want to be among the first testers?</p>
-              <button class="cta-button primary waitlist-trigger"
-                >Join the Waitlist</button
+              <button
+                class="cta-button primary waitlist-trigger"
+                data-waitlist-id="5aa1d8de-5ea0-4d89-a5e9-315b0b695590"
               >
+                Join the Waitlist
+              </button>
             </div>
           </div>
           <div class="mobile-visuals">
@@ -781,7 +784,12 @@ import WaitlistModal from "../components/WaitlistModal.svelte";
       const triggers = document.querySelectorAll(".waitlist-trigger");
       triggers.forEach((trigger) => {
         trigger.addEventListener("click", () => {
-          window.dispatchEvent(new CustomEvent("open-waitlist-modal"));
+          const waitlistId = trigger.getAttribute("data-waitlist-id");
+          window.dispatchEvent(
+            new CustomEvent("open-waitlist-modal", {
+              detail: { waitlistId },
+            }),
+          );
         });
       });
     }

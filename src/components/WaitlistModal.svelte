@@ -57,7 +57,10 @@
   }
 
   onMount(() => {
-    const handleOpen = () => {
+    const handleOpen = (event) => {
+      if (event.detail?.waitlistId) {
+        waitlistId = event.detail.waitlistId;
+      }
       isOpen = true;
     };
     window.addEventListener("open-waitlist-modal", handleOpen);

@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-import Waitlist from "../components/Waitlist.svelte";
+import WaitlistModal from "../components/WaitlistModal.svelte";
 import versionData from "../../version.json";
 ---
 
@@ -239,11 +239,41 @@ import versionData from "../../version.json";
               </li>
             </ul>
           </div>
-          <Waitlist client:load />
+          <button
+            class="cta-button primary waitlist-trigger"
+            data-waitlist-id="82395224-e54b-4de5-80ae-554d66bc7146"
+            style="width: 100%; margin-top: 24px;"
+          >
+            Notify Me
+          </button>
         </div>
       </div>
     </section>
   </main>
 
   <Footer transition:persist />
+
+  <WaitlistModal client:load />
+
+  <script>
+    function setupWaitlistTriggers() {
+      const triggers = document.querySelectorAll(".waitlist-trigger");
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const waitlistId = trigger.getAttribute("data-waitlist-id");
+          window.dispatchEvent(
+            new CustomEvent("open-waitlist-modal", {
+              detail: { waitlistId },
+            }),
+          );
+        });
+      });
+    }
+
+    setupWaitlistTriggers();
+
+    document.addEventListener("astro:after-swap", () => {
+      setupWaitlistTriggers();
+    });
+  </script>
 </Layout>
