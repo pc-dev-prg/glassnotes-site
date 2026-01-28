@@ -10,6 +10,8 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('Proxying request to GNH:', { email, name, waitlist_id });
+
     const response = await fetch('https://glassnotes-headquarters.vercel.app/api/waitlist', {
       method: 'POST',
       headers: {
@@ -19,6 +21,8 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
+    console.log('GNH Response status:', response.status);
+    console.log('GNH Response data:', data);
     
     return res.status(response.status).json(data);
   } catch (error) {
