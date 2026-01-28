@@ -16,15 +16,15 @@ import Footer from "../components/Footer.astro";
         <span class="badge-dot"></span>
         Always here to help
       </div>
-      <h1 class="reveal">Feedback & Support</h1>
-      <p class="reveal delay-1">
+      <h1 class="reveal active">Feedback & Support</h1>
+      <p class="reveal active delay-1">
         Have a question, found a bug, or just want to share your thoughts?<br />
         We value your input and are dedicated to making GlassNotes better every day.
       </p>
 
       <div class="support-grid">
         <!-- Support Card -->
-        <div class="support-card glass reveal delay-2">
+        <div class="support-card glass reveal active delay-2">
           <div class="support-icon">🤝</div>
           <h3>Customer Support</h3>
           <p>
@@ -39,7 +39,7 @@ import Footer from "../components/Footer.astro";
         </div>
 
         <!-- Feedback Card -->
-        <div class="support-card glass reveal delay-3">
+        <div class="support-card glass reveal active delay-3">
           <div class="support-icon">💡</div>
           <h3>Feature Requests</h3>
           <p>
@@ -55,7 +55,7 @@ import Footer from "../components/Footer.astro";
         </div>
 
         <!-- Bug Report Card -->
-        <div class="support-card glass reveal delay-4">
+        <div class="support-card glass reveal active delay-4">
           <div class="support-icon">🐛</div>
           <h3>Report a Bug</h3>
           <p>
@@ -73,48 +73,233 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
 
-      <div class="faq-preview reveal delay-5">
-        <div
-          class="glass"
-          style="max-width: 800px; margin: 80px auto; padding: 48px; text-align: left;"
-        >
+      <div class="gn-faq-wrapper">
+        <div class="gn-faq-container">
           <h2 style="margin-bottom: 32px; font-size: 2rem;">
             Common Questions
           </h2>
-          <div class="faq-item">
-            <h4 style="color: var(--primary); margin-bottom: 8px;">
-              Is my data safe?
-            </h4>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-              Yes. GlassNotes focuses on local storage by default. If you use
-              Cloud Sync, your data is encrypted during transit and at rest.
-            </p>
-          </div>
-          <div
-            style="height: 1px; background: var(--glass-border); margin: 24px 0;"
-          >
-          </div>
-          <div class="faq-item">
-            <h4 style="color: var(--primary); margin-bottom: 8px;">
-              How do I restore a past version?
-            </h4>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-              In the PRO version, you can access the note history sidebar to
-              browse and restore any version with a single click.
-            </p>
-          </div>
-          <div
-            style="height: 1px; background: var(--glass-border); margin: 24px 0;"
-          >
-          </div>
-          <div class="faq-item">
-            <h4 style="color: var(--primary); margin-bottom: 8px;">
-              Will there be a mobile app?
-            </h4>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-              We are currently focusing on the macOS and Web versions, with iOS
-              and iPadOS apps planned for the future.
-            </p>
+
+          <div class="gn-faq-list" id="faq-root">
+            <!-- FAQ 1 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span
+                  >1. What exactly is GlassNotes, and how does it differ from
+                  other note-taking apps?</span
+                >
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    GlassNotes is a minimalist Markdown editor for macOS
+                    designed to function as an elegant sidebar. Its uniqueness
+                    lies in its modern "glassmorphic" design (frosted glass
+                    aesthetic), which utilizes native macOS vibrancy effects,
+                    and its focus on being unobtrusively available at the edge
+                    of your screen without unnecessary distractions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span>2. Are my notes secure and private?</span>
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    Yes, absolute privacy is a top priority. Your notes are
+                    primarily stored locally on your Mac. You have full control
+                    over them and can export or import your entire library in
+                    JSON format at any time. If you choose to enable
+                    synchronization, it is performed securely via a secured
+                    database.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span>3. How does the "Always on Top" feature work?</span>
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    This feature allows you to pin the editor window so it isn't
+                    obscured by other running applications (e.g., a browser or
+                    an IDE). It is ideal for situations where you are taking
+                    notes while watching a tutorial, conducting research, or
+                    writing documentation and need to keep the text constantly
+                    in view.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span
+                  >4. What is the difference between the FREE and PRO versions?</span
+                >
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    The FREE version offers basic writing, folder organization,
+                    and local storage. The PRO version unlocks advanced features
+                    such as:
+                  </p>
+                  <ul
+                    style="margin-top: 12px; list-style-type: none; padding-left: 0;"
+                  >
+                    <li style="margin-bottom: 4px;">
+                      • Creating Wiki-links (interlinking notes)
+                    </li>
+                    <li style="margin-bottom: 4px;">
+                      • Managing deleted items in the Trash (recovery and
+                      auto-deletion after 30 days)
+                    </li>
+                    <li style="margin-bottom: 4px;">
+                      • Version History for your notes
+                    </li>
+                    <li style="margin-bottom: 4px;">
+                      • Dynamic (Smart) folders for automatic organization
+                    </li>
+                    <li style="margin-bottom: 4px;">• And much more</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span>5. Can I create links between notes?</span>
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    Yes, GlassNotes supports so-called Wiki-links. Simply type
+                    [[ in the editor, and the app will offer a list of your
+                    existing notes to link. If a note with that name doesn't
+                    exist, you can create it right away. This feature is
+                    excellent for building a personal knowledge base
+                    (Zettelkasten).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span>6. Can the app be controlled entirely via keyboard?</span>
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    The application places great emphasis on efficiency. In the
+                    settings, you can define a global keyboard shortcut to
+                    create a "Quick Note" from anywhere in the system without
+                    having to switch windows using the mouse. The editor itself,
+                    naturally, fully supports Markdown syntax for fast
+                    formatting.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span>7. What are Dynamic (Smart) folders?</span>
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    Dynamic folders are essentially saved filters. Instead of
+                    manually moving notes, you set up rules (e.g., "all notes
+                    with the tag #project and modified in the last 7 days"), and
+                    the application automatically groups these notes into that
+                    folder.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span
+                  >8. I forgot to save my work-in-progress; will I lose it?</span
+                >
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    Not at all. GlassNotes utilizes a modern continuous
+                    auto-save system. Additionally, the app includes a Note
+                    History feature, which allows you to browse previous
+                    versions of your text and, if necessary, revert to an older
+                    version.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 9 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span
+                  >9. What do the different icons and colors on folders mean?</span
+                >
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    In GlassNotes, you can customize every folder to orient
+                    yourself immediately within the navigation. The app allows
+                    you to assign custom icons from a wide library (based on SF
+                    Symbols) and set specific colors for them. These visual
+                    elements also subtly reflect into the "glass" background of
+                    the editor itself when you are working in them.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 10 -->
+            <div class="gn-faq-item">
+              <button class="gn-faq-header" type="button" aria-expanded="false">
+                <span>10. Do I need to keep GlassNotes in the Dock?</span>
+                <span class="gn-faq-icon"></span>
+              </button>
+              <div class="gn-faq-content-wrap">
+                <div class="gn-faq-inner">
+                  <p>
+                    No, you don't. If you prefer a clean Dock, you can hide the
+                    icon in the settings and control the app solely via the Menu
+                    bar. GlassNotes also supports launching automatically at Mac
+                    startup, so it is ready for writing immediately after you
+                    log in.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -123,7 +308,61 @@ import Footer from "../components/Footer.astro";
 
   <Footer transition:persist />
 
+  <script is:inline>
+    // Self-executing robust initialization
+    (function () {
+      function setupFAQ() {
+        const root = document.getElementById("faq-root");
+        if (!root) return;
+
+        // Clean up previous listener to avoid double-binding during HMR or navigation
+        root.onclick = function (e) {
+          const btn = e.target.closest(".gn-faq-header");
+          if (!btn) return;
+
+          const item = btn.closest(".gn-faq-item");
+          const content = item.querySelector(".gn-faq-content-wrap");
+          const isOpened = item.classList.contains("is-opened");
+
+          // Close others
+          document
+            .querySelectorAll(".gn-faq-item.is-opened")
+            .forEach(function (other) {
+              if (other !== item) {
+                other.classList.remove("is-opened");
+                other
+                  .querySelector(".gn-faq-header")
+                  .setAttribute("aria-expanded", "false");
+                other.querySelector(".gn-faq-content-wrap").style.maxHeight =
+                  "0";
+              }
+            });
+
+          // Toggle current
+          if (isOpened) {
+            item.classList.remove("is-opened");
+            btn.setAttribute("aria-expanded", "false");
+            content.style.maxHeight = "0";
+          } else {
+            item.classList.add("is-opened");
+            btn.setAttribute("aria-expanded", "true");
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        };
+
+        console.log("FAQ Accordion v2.1.0 Initialized on", root);
+      }
+
+      // Initial run
+      setupFAQ();
+
+      // Astro specific
+      document.addEventListener("astro:page-load", setupFAQ);
+    })();
+  </script>
+
   <style>
+    /* Hero & Grid */
     .support-hero {
       padding: 160px 20px 100px;
       max-width: 1200px;
@@ -158,26 +397,24 @@ import Footer from "../components/Footer.astro";
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease;
     }
 
     .support-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      background: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.05);
       border-color: rgba(92, 124, 255, 0.3);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     }
 
     .support-icon {
       font-size: 3rem;
       margin-bottom: 20px;
     }
-
     .support-card h3 {
       font-size: 1.5rem;
       margin-bottom: 16px;
     }
-
     .support-card p {
       color: var(--text-muted);
       font-size: 1rem;
@@ -190,9 +427,129 @@ import Footer from "../components/Footer.astro";
       margin-top: auto;
       width: 100%;
     }
-
     .support-actions .cta-button {
       width: 100%;
+    }
+
+    /* FAQ Core */
+    .gn-faq-wrapper {
+      margin-top: 60px;
+      padding: 0 20px 120px;
+      text-align: center;
+    }
+
+    .gn-faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: left;
+      background: rgba(20, 20, 25, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+    }
+
+    .gn-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .gn-faq-item {
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+      cursor: pointer; /* Makes entire item feel interactive */
+    }
+
+    /* Stable Hover Style - No more flickering */
+    .gn-faq-item:hover {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .gn-faq-item.is-opened {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(92, 124, 255, 0.4);
+    }
+
+    .gn-faq-header {
+      width: 100%;
+      padding: 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent !important;
+      border: none !important;
+      color: var(--text-main);
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      outline: none;
+      transition: color 0.3s ease;
+    }
+
+    .gn-faq-item.is-opened .gn-faq-header {
+      color: var(--primary);
+    }
+
+    .gn-faq-icon {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      margin-left: 20px;
+    }
+
+    .gn-faq-icon::before,
+    .gn-faq-icon::after {
+      content: "";
+      position: absolute;
+      background: currentColor;
+      transition:
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.4s ease;
+      border-radius: 2px;
+    }
+
+    .gn-faq-icon::before {
+      width: 100%;
+      height: 2px;
+      top: 6px;
+      left: 0;
+    }
+
+    .gn-faq-icon::after {
+      width: 2px;
+      height: 100%;
+      top: 0;
+      left: 6px;
+    }
+
+    .gn-faq-item.is-opened .gn-faq-icon::after {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .gn-faq-content-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gn-faq-inner {
+      padding: 0 28px 28px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     @media (max-width: 768px) {
@@ -200,9 +557,12 @@ import Footer from "../components/Footer.astro";
         font-size: 3.5rem;
         letter-spacing: -2px;
       }
-
-      .support-grid {
-        grid-template-columns: 1fr;
+      .gn-faq-container {
+        padding: 24px 16px;
+      }
+      .gn-faq-header {
+        font-size: 1.1rem;
+        padding: 20px;
       }
     }
   </style>
