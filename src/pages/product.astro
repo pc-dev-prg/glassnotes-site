@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import versionData from "../../version.json";
+import WaitlistModal from "../components/WaitlistModal.svelte";
 ---
 
 <Layout title="Product Ecosystem | GlassNotes - Desktop, Web & Mobile">
@@ -310,7 +311,8 @@ import versionData from "../../version.json";
             </p>
             <div class="waitlist-ui">
               <p>Want to be among the first testers?</p>
-              <a href="/#footer" class="cta-button primary">Join the Waitlist</a
+              <button class="cta-button primary waitlist-trigger"
+                >Join the Waitlist</button
               >
             </div>
           </div>
@@ -365,6 +367,8 @@ import versionData from "../../version.json";
   </main>
 
   <Footer transition:persist />
+
+  <WaitlistModal client:load />
 
   <style>
     .product-hero {
@@ -772,6 +776,21 @@ import versionData from "../../version.json";
 
     // Run on initial load and after transitions
     setupScrollSpy();
-    document.addEventListener("astro:after-swap", setupScrollSpy);
+
+    function setupWaitlistTriggers() {
+      const triggers = document.querySelectorAll(".waitlist-trigger");
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          window.dispatchEvent(new CustomEvent("open-waitlist-modal"));
+        });
+      });
+    }
+
+    setupWaitlistTriggers();
+
+    document.addEventListener("astro:after-swap", () => {
+      setupScrollSpy();
+      setupWaitlistTriggers();
+    });
   </script>
 </Layout>
