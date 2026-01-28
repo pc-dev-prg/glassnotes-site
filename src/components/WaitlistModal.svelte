@@ -30,20 +30,17 @@
     errorMessage = "";
 
     try {
-      const response = await fetch(
-        "https://glassnotes-headquarters.vercel.app/api/waitlist",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            name,
-            waitlist_id: waitlistId,
-          }),
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          email,
+          name,
+          waitlist_id: waitlistId,
+        }),
+      });
 
       const data = await response.json();
 
