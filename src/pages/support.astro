@@ -1,0 +1,209 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Feedback & Support | GlassNotes"
+  description="We're here to help. Get support or share your feedback about GlassNotes."
+>
+  <Navigation transition:persist />
+
+  <main transition:animate="slide">
+    <section class="support-hero">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Always here to help
+      </div>
+      <h1 class="reveal">Feedback & Support</h1>
+      <p class="reveal delay-1">
+        Have a question, found a bug, or just want to share your thoughts?<br />
+        We value your input and are dedicated to making GlassNotes better every day.
+      </p>
+
+      <div class="support-grid">
+        <!-- Support Card -->
+        <div class="support-card glass reveal delay-2">
+          <div class="support-icon">🤝</div>
+          <h3>Customer Support</h3>
+          <p>
+            Encountered an issue or need help with your account? Our team is
+            ready to assist you.
+          </p>
+          <div class="support-actions">
+            <a href="mailto:support@glassnotes.app" class="cta-button primary"
+              >Email Support</a
+            >
+          </div>
+        </div>
+
+        <!-- Feedback Card -->
+        <div class="support-card glass reveal delay-3">
+          <div class="support-icon">💡</div>
+          <h3>Feature Requests</h3>
+          <p>
+            Tell us what you'd like to see next in GlassNotes. Your ideas shape
+            the future of the app.
+          </p>
+          <div class="support-actions">
+            <a
+              href="mailto:feedback@glassnotes.app"
+              class="cta-button secondary">Send Feedback</a
+            >
+          </div>
+        </div>
+
+        <!-- Bug Report Card -->
+        <div class="support-card glass reveal delay-4">
+          <div class="support-icon">🐛</div>
+          <h3>Report a Bug</h3>
+          <p>
+            Help us squash those bugs! If something isn't working as expected,
+            please let us know.
+          </p>
+          <div class="support-actions">
+            <a
+              href="https://github.com/pc-dev-prg/glassnotes-site/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button secondary">GitHub Issues</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-preview reveal delay-5">
+        <div
+          class="glass"
+          style="max-width: 800px; margin: 80px auto; padding: 48px; text-align: left;"
+        >
+          <h2 style="margin-bottom: 32px; font-size: 2rem;">
+            Common Questions
+          </h2>
+          <div class="faq-item">
+            <h4 style="color: var(--primary); margin-bottom: 8px;">
+              Is my data safe?
+            </h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Yes. GlassNotes focuses on local storage by default. If you use
+              Cloud Sync, your data is encrypted during transit and at rest.
+            </p>
+          </div>
+          <div
+            style="height: 1px; background: var(--glass-border); margin: 24px 0;"
+          >
+          </div>
+          <div class="faq-item">
+            <h4 style="color: var(--primary); margin-bottom: 8px;">
+              How do I restore a past version?
+            </h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              In the PRO version, you can access the note history sidebar to
+              browse and restore any version with a single click.
+            </p>
+          </div>
+          <div
+            style="height: 1px; background: var(--glass-border); margin: 24px 0;"
+          >
+          </div>
+          <div class="faq-item">
+            <h4 style="color: var(--primary); margin-bottom: 8px;">
+              Will there be a mobile app?
+            </h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              We are currently focusing on the macOS and Web versions, with iOS
+              and iPadOS apps planned for the future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer transition:persist />
+
+  <style>
+    .support-hero {
+      padding: 160px 20px 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .support-hero h1 {
+      font-size: 5rem;
+      letter-spacing: -4px;
+      margin-bottom: 24px;
+    }
+
+    .support-hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .support-card {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .support-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(92, 124, 255, 0.3);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .support-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .support-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .support-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .support-actions {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .support-actions .cta-button {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .support-hero h1 {
+        font-size: 3.5rem;
+        letter-spacing: -2px;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Layout>
