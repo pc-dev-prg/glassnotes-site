@@ -25,17 +25,24 @@ import versionData from "../../version.json";
       </p>
 
       <div class="pricing-grid">
-        <!-- Starter Plan -->
+        <!-- FREE Plan -->
         <div class="pricing-card glass reveal delay-2">
           <div class="plan-info">
-            <h3>GlassNotes FREE</h3>
-            <div class="price">$0 <span>/ forever</span></div>
+            <div class="price-section">
+              <h3>FREE</h3>
+              <div class="price">$0 <span>/ forever</span></div>
+            </div>
             <p>The pure, essential writing experience.</p>
           </div>
           <ul class="plan-features">
+            <li class="pill-feature">
+              <div class="feature-content">
+                <strong>20 notes & 5 folders limit</strong>
+              </div>
+            </li>
             <li>
               <div class="feature-content">
-                <strong>Pure Markdown Editor</strong>
+                <strong>Modern Markdown Editor</strong>
                 <span class="desc">Formatting, tables, and tasks.</span>
               </div>
             </li>
@@ -53,20 +60,8 @@ import versionData from "../../version.json";
             </li>
             <li>
               <div class="feature-content">
-                <strong>Standard Glass Theme</strong>
-                <span class="desc">Clean, native macOS aesthetics.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
                 <strong>Folders & Tags</strong>
                 <span class="desc">Essential organization tools.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
-                <strong>Markdown Export</strong>
-                <span class="desc">Save as standard .md files.</span>
               </div>
             </li>
             <li>
@@ -75,24 +70,9 @@ import versionData from "../../version.json";
                 <span class="desc">English, Czech, German, and more.</span>
               </div>
             </li>
-          </ul>
-          <a href={versionData.downloadUrl} class="cta-button secondary"
-            >Download the App</a
-          >
-        </div>
-
-        <!-- Pro Plan -->
-        <div class="pricing-card glass pro-featured reveal delay-3">
-          <div class="popular-badge">MOST POPULAR</div>
-          <div class="plan-info">
-            <h3>GlassNotes PRO</h3>
-            <div class="price">$8 <span>/ month</span></div>
-            <p>Unleash the full potential of your knowledge ecosystem.</p>
-          </div>
-          <ul class="plan-features">
             <li>
               <div class="feature-content">
-                <strong>Unlimited Wiki-links</strong>
+                <strong>Wiki-links</strong>
                 <span class="desc">Build a persistent web of knowledge.</span>
               </div>
             </li>
@@ -105,7 +85,79 @@ import versionData from "../../version.json";
             <li>
               <div class="feature-content">
                 <strong>One-Click Restore</strong>
-                <span class="desc">Instantly revert to any past version.</span>
+                <span class="desc">Instantly revert to any version.</span>
+              </div>
+            </li>
+            <li>
+              <div class="feature-content">
+                <strong>Advanced Smart Folders</strong>
+                <span class="desc">Dynamic multi-criteria filters.</span>
+              </div>
+            </li>
+            <li>
+              <div class="feature-content text-center">
+                <a href="/product" class="feature-link">And much more →</a>
+              </div>
+            </li>
+          </ul>
+          <a href={versionData.downloadUrl} class="cta-button secondary"
+            >Download the App</a
+          >
+        </div>
+
+        <!-- PLUS Plan -->
+        <div class="pricing-card glass reveal delay-3">
+          <div class="plan-info">
+            <div class="price-section">
+              <h3>PLUS</h3>
+              <div class="price">$24.99 <span>/ once</span></div>
+            </div>
+            <p>Everything you need for personal local knowledge base.</p>
+          </div>
+          <ul class="plan-features">
+            <li class="pill-feature green">
+              <div class="feature-content">
+                <strong>Unlimited notes & folders</strong>
+              </div>
+            </li>
+            <li>
+              <div class="feature-content">
+                <strong>All features as FREE</strong>
+                <span class="desc">Everything in the free tier included.</span>
+              </div>
+            </li>
+            <li>
+              <div class="feature-content">
+                <strong>Local JSON export</strong>
+                <span class="desc">Backup your data in standard format.</span>
+              </div>
+            </li>
+            <li class="coming-soon">
+              <div class="feature-content">
+                <strong>Basic AI functions</strong>
+                <span class="desc">With your own API key.</span>
+              </div>
+            </li>
+          </ul>
+          <a href="#" class="cta-button primary">Upgrade to Plus</a>
+        </div>
+
+        <!-- PRO Plan -->
+        <div class="pricing-card glass pro-featured reveal delay-4">
+          <div class="popular-badge">MOST POPULAR</div>
+          <div class="plan-info">
+            <div class="price-section">
+              <h3>PRO</h3>
+              <div class="price">$4.99 <span>/ month</span></div>
+              <div class="price-annual">or $49.99 / year</div>
+            </div>
+            <p>Unleash the full potential of your knowledge ecosystem.</p>
+          </div>
+          <ul class="plan-features">
+            <li>
+              <div class="feature-content">
+                <strong>All features as PLUS</strong>
+                <span class="desc">Everything in the Plus tier included.</span>
               </div>
             </li>
             <li>
@@ -122,130 +174,74 @@ import versionData from "../../version.json";
             </li>
             <li>
               <div class="feature-content">
-                <strong>Designer Theme Suite</strong>
-                <span class="desc">Midnight, Forest, and Sunset themes.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
-                <strong>Advanced Smart Folders</strong>
-                <span class="desc">Dynamic multi-criteria filters.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
-                <strong>Customization Plus</strong>
-                <span class="desc">Custom folder colors and icons.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
-                <strong>Priority Support</strong>
-                <span class="desc">Direct access to developers.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
-                <strong>Early Access</strong>
-                <span class="desc">Try experimental new features first.</span>
-              </div>
-            </li>
-          </ul>
-          <a href="#" class="cta-button primary">Upgrade to Pro</a>
-        </div>
-
-        <!-- Lifetime Plan -->
-        <div class="pricing-card glass lifetime-tier reveal delay-4">
-          <div class="plan-info">
-            <h3>Lifetime Access</h3>
-            <div class="price">$149 <span>/ once</span></div>
-            <p>One-time payment. Pure focus for a lifetime.</p>
-          </div>
-          <ul class="plan-features">
-            <li>
-              <div class="feature-content">
-                <strong>Everything in PRO</strong>
-                <span class="desc">All current and future pro features.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
                 <strong>Lifetime Updates</strong>
-                <span class="desc">Never pay for another version again.</span>
+                <span class="desc">Access to all future features.</span>
               </div>
             </li>
-            <li>
+            <li class="coming-soon">
               <div class="feature-content">
-                <strong>Priority Support</strong>
-                <span class="desc">Direct VIP access to our team.</span>
-              </div>
-            </li>
-            <li>
-              <div class="feature-content">
-                <strong>Vault Sync</strong>
-                <span class="desc">Cloud coordination across all devices.</span>
+                <strong>Basic AI functions</strong>
+                <span class="desc">50 queries/month included.</span>
               </div>
             </li>
           </ul>
-          <a href="#" class="cta-button primary">Own it Forever</a>
+          <a href="#" class="cta-button primary">Unlock Pro Power</a>
         </div>
       </div>
 
-      <div class="ai-coming-soon reveal delay-5">
+      <div class="ai-addon reveal delay-5">
         <div class="pricing-card glass ai-tier">
-          <div class="ai-badge hidden">FUTURE RELEASE</div>
+          <div class="ai-badge">PRO ADD-ON</div>
           <div class="ai-content-wrapper">
             <div class="plan-info">
-              <h3>GlassNotes AI Plus</h3>
-              <div class="price">Coming Soon</div>
-              <p>
-                Supercharge your writing with integrated artificial
-                intelligence.
-              </p>
+              <div class="price-section">
+                <h3>AI Plus</h3>
+                <div class="price">+$5 <span>/ month</span></div>
+              </div>
+              <p>For high-intensity workflows and deep insights.</p>
+              <div class="model-attribution">
+                <span class="powered-by">Powered by Google Gemini 3 flash</span>
+                <span class="model-desc"
+                  >One of the most advanced models on the market</span
+                >
+              </div>
             </div>
             <ul class="plan-features ai-features-grid">
               <li>
                 <div class="feature-content">
-                  <strong>Intelligent Summarization</strong>
+                  <strong>Advanced AI functions</strong>
                   <span class="desc"
-                    >Distill long documents into actionable insights instantly.</span
+                    >Proactive summarization and contextual drafting.</span
                   >
                 </div>
               </li>
               <li>
                 <div class="feature-content">
-                  <strong>Smart Drafting</strong>
-                  <span class="desc"
-                    >AI-powered suggestions to help you overcome writer's block.</span
-                  >
+                  <strong>Unlimited queries</strong>
+                  <span class="desc">No limits on your AI interactions.</span>
                 </div>
               </li>
               <li>
                 <div class="feature-content">
-                  <strong>Contextual Awareness</strong>
+                  <strong>Deep Vault Insight</strong>
                   <span class="desc"
-                    >The AI understands your entire vault and links related
-                    ideas.</span
-                  >
-                </div>
-              </li>
-              <li>
-                <div class="feature-content">
-                  <strong>Autonomous Tagging</strong>
-                  <span class="desc"
-                    >Automatic organization based on the content of your notes.</span
+                    >AI understands your entire knowledge web.</span
                   >
                 </div>
               </li>
             </ul>
           </div>
-          <button
-            class="cta-button primary waitlist-trigger"
-            data-waitlist-id="82395224-e54b-4de5-80ae-554d66bc7146"
-            style="width: 100%; margin-top: 24px;"
-          >
-            Notify Me
-          </button>
+          <div class="addon-footer">
+            <span class="requires">* Only available with GlassNotes PRO</span>
+            <button
+              class="cta-button primary waitlist-trigger disabled"
+              data-waitlist-id="82395224-e54b-4de5-80ae-554d66bc7146"
+              disabled
+            >
+              Add to Pro
+              <span class="btn-badge">COMING SOON</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>

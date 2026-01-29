@@ -740,6 +740,14 @@ header {
   padding: 4px 12px;
   border-radius: 100px;
   letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+.price-section {
+  min-height: 180px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .plan-info h3 {
@@ -765,6 +773,7 @@ header {
 .plan-info p {
   font-size: 0.95rem;
   color: var(--text-muted);
+  margin-top: 0 !important;
   margin-bottom: 40px;
   text-align: left;
 }
@@ -800,8 +809,94 @@ header {
   display: block;
 }
 
-/* AI Coming Soon Card */
-.ai-coming-soon {
+/* Pricing Table Refinements */
+.price-annual {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: -30px;
+  margin-bottom: 26px;
+  font-weight: 500;
+}
+
+.pill-feature {
+  background: rgba(92, 124, 255, 0.1);
+  border: 1px solid rgba(92, 124, 255, 0.2);
+  border-radius: 12px;
+  padding: 10px 15px !important;
+  margin-bottom: 25px !important;
+}
+
+.pill-feature strong {
+  color: var(--primary) !important;
+  margin-bottom: 0 !important;
+}
+
+.pill-feature.green {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.pill-feature.green strong {
+  color: #10b981 !important;
+}
+
+.feature-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.feature-link:hover {
+  opacity: 0.8;
+  padding-left: 4px;
+}
+
+.cta-button.disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.btn-badge {
+  font-size: 0.65rem;
+  font-weight: 900;
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.coming-soon {
+  opacity: 0.7;
+}
+
+.coming-soon::after {
+  content: "COMING SOON";
+  font-size: 0.6rem;
+  font-weight: 800;
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* AI Addon */
+.ai-addon {
   margin-top: 60px;
   width: 100%;
   max-width: 1100px;
@@ -812,7 +907,23 @@ header {
 .pricing-card.ai-tier {
   background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(248, 250, 252, 0.04) 100%);
   border-color: rgba(168, 85, 247, 0.2);
-  padding: 60px;
+  padding: 40px 60px;
+}
+
+.addon-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 20px;
+}
+
+.requires {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 .ai-badge {
@@ -833,7 +944,27 @@ header {
   grid-template-columns: 1fr 1.5fr;
   gap: 60px;
   text-align: left;
-  margin-bottom: 24px;
+  margin-bottom: 0;
+}
+
+.model-attribution {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.powered-by {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #c084fc;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.model-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .ai-features-grid {
